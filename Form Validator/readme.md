@@ -5,7 +5,7 @@
 The mini project manifests the use of the JS __Document Object Model__ *(DOM)* to Check the following:
 
 * required 
- >Checks for all the required input fields, Indicates the user in case of the said field is missing
+  >Checks for all the required input fields, Indicates the user case of the said field is missing
 * length
   >Checks for the Minumum and Maximum length depending on the conditions/type of input field
 * email
