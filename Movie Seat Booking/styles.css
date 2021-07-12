@@ -27,9 +27,9 @@ body {
     margin-left: 10px;
     padding: 5px 15px;
     outline: none;
-    appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .container {
