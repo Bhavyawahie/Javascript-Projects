@@ -15,7 +15,7 @@
     <p>Choose the currency and Enter the amount to calculate the Exchange rate</p>
     <div class="container">
         <div class="currency">
-            <select class="currency-one">
+            <select class="currency-one" id="currency-one">
                 <option value="AED">AED</option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>
@@ -72,11 +72,11 @@
             <input type="number" value="1" id="amount-one">
         </div>
         <div class="swap-rate-container">
-            <button class="btn" id="rate">Swap</button>
+            <button class="btn" id="swap">Swap</button>
             <div class="rate" id="rate"></div>
         </div>
         <div class="currency">
-            <select class="currency-two">
+            <select class="currency-two" id="currency-two">
                 <option value="AED">AED</option>
                 <option value="ARS">ARS</option>
                 <option value="AUD">AUD</option>
@@ -133,6 +133,7 @@
             <input type="number" placeholder="0" id="amount-two">
         </div>
     </div>
+    <span>Made with ❤ by <a href="https://www.twitter.com/bhavyawahie">Bhavya Wahie</a></span>
     <script src="index.js"></script>
 </body>
 
