@@ -9,10 +9,10 @@ const rateEl = document.getElementById("rate");
 function calculate () {
     const currencyOne = currencyEl_one.value;
     const currencyTwo = currencyEl_two.value;
-    fetch(`https://v6.exchangerate-api.com/v6/c1366d578dcd6e08bf68e71c/latest/${currencyOne}`)
+    fetch(`https://open.exchangerate-api.com/v6/latest/${currencyOne}`)
     .then(res =>  res.json())
     .then(data => {
-        const rate = data.conversion_rates[currencyTwo];
+        const rate = data.rates[currencyTwo];
         rateEl.innerText = `1 ${currencyOne} = ${rate} ${currencyTwo}`
         amountEl_two.value = (amountEl_one.value*rate).toFixed(2);
     });
