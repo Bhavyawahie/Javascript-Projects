@@ -9,8 +9,13 @@ const rateEl = document.getElementById("rate");
 function calculate () {
     const currencyOne = currencyEl_one.value;
     const currencyTwo = currencyEl_two.value;
-    console.log(currencyOne, currencyTwo)
-    fetch()
+    fetch(`https://v6.exchangerate-api.com/v6/c1366d578dcd6e08bf68e71c/latest/${currencyOne}`)
+    .then(res =>  res.json())
+    .then(data => {
+        const rate = data.conversion_rates[currencyTwo];
+        rateEl.innerText = `1 ${currencyOne} = ${rate} ${currencyTwo}`
+        amountEl_two.value = (amountEl_one.value*rate).toFixed(2);
+    });
 }
 
 //Event listeners
@@ -18,5 +23,11 @@ currencyEl_one.addEventListener("change", calculate);
 amountEl_one.addEventListener("input", calculate);
 currencyEl_two.addEventListener("change", calculate);
 amountEl_two.addEventListener("input", calculate);
+swap.addEventListener("click", () => {
+    const temp = currencyEl_one.value;
+    currencyEl_one.value = currencyEl_two.value;
+    currencyEl_two.value = temp;
+    calculate()
+})
 
 calculate();
