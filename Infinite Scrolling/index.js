@@ -30,6 +30,5 @@ async function showPosts () {
         postContainer.appendChild(postEl)
     })
 }
-
-
+showPosts();
 
