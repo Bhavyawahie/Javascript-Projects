@@ -30,5 +30,27 @@ async function showPosts () {
         postContainer.appendChild(postEl)
     });
 }
+
+function showLoader () {
+    loader.classList.add("show");
+    setTimeout(() => {
+        loader.classList.remove("show");
+        setTimeout(() => {
+            page++;
+            showPosts();
+        }, 300)
+    },1000)
+}
+
+//Show inital 5 set of posts
 showPosts();
+
+window.addEventListener("scroll", () => {
+    const { clientHeight, scrollHeight, scrollTop} = document.documentElement;
+    if(scrollTop + clientHeight >= scrollHeight - 5) {
+        showLoader();
+    }
+})
+
+
 
