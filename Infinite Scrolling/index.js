@@ -28,7 +28,7 @@ async function showPosts () {
         </div>
         `
         postContainer.appendChild(postEl)
-    })
+    });
 }
 showPosts();
 
